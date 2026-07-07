@@ -418,6 +418,24 @@ class MarkdownGenerator:
         """
         return self.get_content()
 
+    def add_math_equation(self, equation: str, inline: bool = False) -> 'AdvancedMarkdownGenerator':
+        """
+        添加数学公式
+        
+        参数:
+        equation: 数学公式
+        inline: 是否行内公式
+        
+        返回:
+        自身实例，支持链式调用
+        """
+        if inline:
+            self.content.append(f"${equation}$")
+        else:
+            self.content.append(f"$${equation}$$")
+        
+        self.content.append("")  # 空行分隔
+        return self
 
 # 高级功能扩展
 class AdvancedMarkdownGenerator(MarkdownGenerator):

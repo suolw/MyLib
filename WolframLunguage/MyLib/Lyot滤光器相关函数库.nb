@@ -1,0 +1,108 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3350,        100]
+NotebookOptionsPosition[      2802,         81]
+NotebookOutlinePosition[      3271,         99]
+CellTagsIndexPosition[      3228,         96]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Lyot\:6ee4\:5149\:5668\:76f8\:5173\:51fd\:6570\:5e93", "Title",
+ CellFrame->{{0, 0}, {0.5, 0}},
+ CellFrameColor->GrayLevel[0.75],
+ CellChangeTimes->{{3.9756178982842197`*^9, 3.9756179107046185`*^9}, {
+   3.975617956236044*^9, 3.9756179750107956`*^9}, 3.9756182363349648`*^9, {
+   3.9756182696518364`*^9, 3.9756182696528378`*^9}, {3.9756183162963276`*^9, 
+   3.9756183178860226`*^9}, 
+   3.975618420633547*^9},ExpressionUUID->"e49ea863-1a04-8e4d-9462-\
+e4cc1f32fb6e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"LyotLayers", "[", 
+    RowBox[{"n_", ",", " ", "no_", ",", " ", "ne_", ",", " ", "d_"}], "]"}], ":=",
+    "\[IndentingNewLine]", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{
+        RowBox[{"2", "^", 
+         RowBox[{"(", 
+          RowBox[{"i", "-", "1"}], ")"}]}], " ", "Pi", " ", "d", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"no", "-", "ne"}], ")"}], "/", "\[Lambda]"}]}], "]"}], "^", 
+      "2"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tn", "[", 
+    RowBox[{"n_", ",", " ", "no_", ",", " ", "ne_", ",", " ", "d_"}], "]"}], ":=", 
+   RowBox[{"Times", "@@", 
+    RowBox[{"LyotLayers", "[", 
+     RowBox[{"n", ",", " ", "no", ",", " ", "ne", ",", " ", "d"}], "]"}]}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"KFist", "[", 
+    RowBox[{"\[Lambda]_", ",", "HW_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"0.5", "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Lambda]", "/", "HW"}], "-", "1"}], ")"}]}], ")"}], "//", 
+    "Ceiling"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9756179902348733`*^9, 3.9756179902353745`*^9}, {
+  3.9756200960714207`*^9, 3.975620140478134*^9}, {3.975620189988224*^9, 
+  3.975620202454281*^9}, {3.975620276508188*^9, 3.975620331398544*^9}, {
+  3.975620419600195*^9, 3.975620427235071*^9}, {3.97562070779751*^9, 
+  3.975620709815481*^9}, {3.975620768069628*^9, 3.9756207816850758`*^9}, {
+  3.975621507551926*^9, 3.975621523165638*^9}, {3.9811618663332996`*^9, 
+  3.981161866993532*^9}},ExpressionUUID->"3f7e4f09-276a-8e4c-9cd0-\
+e17a97023e4a"]
+}, Open  ]]
+},
+WindowSize->{569.25, 624.75},
+WindowMargins->{{506.25, Automatic}, {204.75, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (2023\:5e7412\:670812\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c0aa55b5-e614-3847-ae90-369a2f6dc0f5"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 472, 8, 106, "Title",ExpressionUUID->"e49ea863-1a04-8e4d-9462-e4cc1f32fb6e"],
+Cell[1055, 32, 1731, 46, 133, "Input",ExpressionUUID->"3f7e4f09-276a-8e4c-9cd0-e17a97023e4a"]
+}, Open  ]]
+}
+]
+*)
+

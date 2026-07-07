@@ -173,6 +173,29 @@ class IntensityStabilityAnalyzer:
         plt.tight_layout()
         plt.show()
     
+    def print_report_md(self, title: str = "光强稳定性分析报告") -> None:
+        """打印分析报告"""
+        if not self.results:
+            print("请先运行analyze_stability()方法")
+            return
+        
+        print(title)
+        print("|数据项|数值|")
+        print("|---|---|")
+        print(f"|数据点数| {self.results['data_points']}|")
+        minutes, seconds = self.results['total_time']
+        print(f"|总时间| {minutes}分{seconds:.1f}秒|")
+        print(f"|光功率均值| {self.results['mean_intensity']:.4f} μW|")
+
+        pp_abs, pp_rel = self.results['peak_to_peak']
+        print(f"|峰峰值波动| 绝对波动：{pp_abs:.4f} μW <br> 相对波动: {pp_rel:.4f} %|")
+        
+        rms_abs, rms_rel = self.results['rms_fluctuation']
+        print(f"|RMS起伏| 绝对起伏：{rms_abs:.4f} μW <br> 相对RMS起伏: {rms_rel:.4f} %|")
+        
+        print(f"|功率稳定度| {self.results['power_stability']:.4f} %|")
+        print(f"|信噪比| {self.results['signal_to_noise']:.4f} dB|")
+
     def print_report(self, title: str = "光强稳定性分析报告") -> None:
         """打印分析报告"""
         if not self.results:
